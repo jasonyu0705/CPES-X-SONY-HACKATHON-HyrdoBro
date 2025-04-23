@@ -6,7 +6,7 @@ This project was developed by a team of two during the CPESxSONY Hackathon in 20
 
 ### How it was made
 For this project we used the [Sony Spresense main board](https://developer.sony.com/spresense) along with its extension board to power our robot. The development was done using the Arduino IDE for easy set up and control over the various components used in this project. We housed all the electronics in a carboard shell to represent a cartoonish robot , to make the whole project neater and more friendly for users.
-
+  
 **<ins>Components</ins>:**
 - Sony spresense main board + extension board
 - 16x2 LCD
@@ -19,9 +19,15 @@ For this project we used the [Sony Spresense main board](https://developer.sony.
 ### Schematic for wiring HydroBro is below: 
 <img src="https://github.com/user-attachments/assets/ef06c4f8-b88a-469b-bce0-1acd375ceba5" width="350">
 
+## The Finished Project!
+<img src= "https://github.com/user-attachments/assets/b35da895-1795-4f5f-9004-cffa6fb2b8d7" width="350">
+
 ## Resources
+*These resources provided assistance with getting HydroBro set up*   
+  
 Arduino Setup with Spresense: https://developer.sony.com/spresense/development-guides/arduino_set_up_en  
 Sony Spresense Hardware Manual: https://developer.sony.com/spresense/development-guides/hw_docs_en
+
 
 ## Our Team 
 <a href="https://github.com/jasonyu0705/CPES-X-SONY-HACKATHON-HyrdoBro/graphs/contributors">
