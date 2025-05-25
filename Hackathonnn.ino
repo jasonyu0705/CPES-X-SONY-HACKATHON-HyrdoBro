@@ -4,8 +4,8 @@
 #include "CuteBuzzerSounds.h"
 
 
-static Servo servo1;  // first servo instance
-static Servo servo2;  // second servo instance
+ Servo servo1, servo2;  // second servo instance
+CuteBuzzerSounds cute;
 // ----Pin definitions--------------------------------------
 
 // Ultra Sonic Sensor
@@ -17,8 +17,6 @@ static Servo servo2;  // second servo instance
 #define led 2
 #define led2 10
 
-//Motor pin (unable to implement into the final design ): )
-#define motorPin 3 // Motor control pin (PWM)
 
 //Buzzer pin 
 #define BUZZER_PIN 13
@@ -38,9 +36,9 @@ void setup() {  // assigning pins to inputs and outputs
   // attach both servos
   servo1.attach(SERVO_PIN1);
   servo2.attach(SERVO_PIN2);
-  servo1.write(0);
-  servo2.write(0);
-  
+  servo1.write(90);
+  servo2.write(90);
+  delay(200);
   lcd.begin(16, 2);
   lcd.print("Booting up..."); // making sure lcd is working on startup
   delay(1000);
@@ -102,14 +100,14 @@ void loop() {
         if (blinkState) {// flashing text on a blink of teh LED's
           lcd.print("Drink water    ");
           cute.play(S_SUPER_HAPPY);
-         servo1.write(30);
-        servo2.write(-30);
+         servo1.write(90+30);
+        servo2.write(90-30);
           delay10
         } else {
           lcd.print("Go take a walk ");// flashing text on other blink to allow for multiple lines of text (sychronized with leds)
           cute.play(S_HAPPY);
-          servo1.write(-30);
-          servo2.write(30);
+          servo1.write(90-30);
+          servo2.write(90+30);
         }
       }
     } else {
