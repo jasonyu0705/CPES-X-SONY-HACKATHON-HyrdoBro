@@ -1,15 +1,18 @@
 // Sensor code :DD
 #include <LiquidCrystal.h>
-
+#include <Servo.h>
 #include "CuteBuzzerSounds.h"
 
 
+static Servo servo1;  // first servo instance
+static Servo servo2;  // second servo instance
 // ----Pin definitions--------------------------------------
 
 // Ultra Sonic Sensor
 #define trigPin 1
 #define echoPin 0
-
+#define SERVO_PIN1 PIN_D03
+#define SERVO_PIN2 PIN_D05
 //Leds
 #define led 2
 #define led2 10
@@ -32,7 +35,12 @@ void setup() {  // assigning pins to inputs and outputs
   pinMode(led2, OUTPUT);
   pinMode(motorPin, OUTPUT);
   cute.init(BUZZER_PIN);
-
+  // attach both servos
+  servo1.attach(SERVO_PIN1);
+  servo2.attach(SERVO_PIN2);
+  servo1.write(0);
+  servo2.write(0);
+  
   lcd.begin(16, 2);
   lcd.print("Booting up..."); // making sure lcd is working on startup
   delay(1000);
@@ -94,10 +102,14 @@ void loop() {
         if (blinkState) {// flashing text on a blink of teh LED's
           lcd.print("Drink water    ");
           cute.play(S_SUPER_HAPPY);
-
+         servo1.write(30);
+        servo2.write(-30);
+          delay10
         } else {
           lcd.print("Go take a walk ");// flashing text on other blink to allow for multiple lines of text (sychronized with leds)
           cute.play(S_HAPPY);
+          servo1.write(-30);
+          servo2.write(30);
         }
       }
     } else {
